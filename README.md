@@ -13,11 +13,28 @@ darker, so `--green` type clears 4.5:1 against the page.
 
 ```sh
 npm install
-npm run dev      # http://localhost:4321
+npm run dev      # http://localhost:4321/fai-promo-website/
 npm run build    # → dist/
 npm run preview  # serve the built output
 npm run check    # astro check (TypeScript + Astro diagnostics)
 ```
+
+## Deploying
+
+`.github/workflows/deploy.yml` builds the site and publishes `dist/` to GitHub Pages
+on every push to `main`, and on demand from the Actions tab.
+
+One-time setup: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+The workflow fails at the *Configure Pages* step until that is selected.
+
+The site is served from a sub-path (`/fai-promo-website/`), so `astro.config.mjs`
+sets `base`. CI passes the real values in as `SITE` and `BASE_PATH`, taken from the
+Pages configuration, and locally the defaults match — `npm run dev` serves
+`http://localhost:4321/fai-promo-website/`. Link to your own assets through
+`import.meta.env.BASE_URL` rather than a leading `/`, or they 404 once deployed.
+
+For a custom domain, set `SITE`/`BASE_PATH` (e.g. `BASE_PATH=/`) and add
+`public/CNAME`.
 
 ## Layout
 

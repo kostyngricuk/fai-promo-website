@@ -10,6 +10,9 @@ const description =
   'plans, reviews and ships changes with the rules your code does not say out loud.';
 const url = 'https://github.com/kostyngricuk/fai';
 const repo = 'https://github.com/kostyngricuk/fai';
+
+// BASE_URL carries the GitHub Pages sub-path; normalise it to exactly one trailing slash.
+const asset = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${path}`;
 ---
 
 <!doctype html>
@@ -20,7 +23,7 @@ const repo = 'https://github.com/kostyngricuk/fai';
     <title>{title} · demo</title>
     <meta name="description" content={description} />
     <meta name="color-scheme" content="light" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href={asset('favicon.svg')} type="image/svg+xml" />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
