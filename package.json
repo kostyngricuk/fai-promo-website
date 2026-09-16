@@ -1,0 +1,31 @@
+{
+  "name": "fai-promo-website",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FAI — Feature Agents Infrastructure · promo deck",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^6.0.5",
+    "@gsap/react": "^2.1.2",
+    "astro": "^7.3.2",
+    "gsap": "^3.15.0",
+    "motion": "^13.3.0",
+    "ogl": "^1.0.11",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^5.9.3"
+  }
+}

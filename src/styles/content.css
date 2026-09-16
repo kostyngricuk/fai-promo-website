@@ -1,0 +1,195 @@
+/* ---------- note cards (SpotlightCard) ---------- */
+
+.note p {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 52ch;
+}
+
+/* ---------- table ---------- */
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 780px;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 12px 18px 12px 0;
+  border-bottom: 1px solid var(--line-2);
+  font-size: clamp(14px, 1.1vw, 17px);
+  vertical-align: top;
+}
+
+.table th {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+.table th:first-child {
+  width: 190px;
+}
+
+.table td.key {
+  font-family: var(--mono);
+  color: var(--green);
+  white-space: nowrap;
+  padding-right: 28px;
+}
+
+/* ---------- file cards (GlareHover) ---------- */
+
+.file-card {
+  padding: 15px 17px;
+  text-align: left;
+}
+
+.file-card__name {
+  font-family: var(--mono);
+  font-size: 13.5px;
+  color: var(--green);
+  margin-bottom: 6px;
+}
+
+.file-card p {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ---------- the 15 sections of an agent file ---------- */
+
+.sections {
+  display: grid;
+  gap: 3px;
+  max-width: 560px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sections li {
+  display: grid;
+  grid-template-columns: 2.1em 1fr;
+  font-size: 14px;
+  padding: 5px 9px;
+  border-radius: 4px;
+  color: var(--muted);
+}
+
+.sections .n {
+  font-family: var(--mono);
+  font-size: 12.5px;
+}
+
+.sections li.is-hot {
+  background: var(--card);
+  color: var(--body);
+  box-shadow: inset 2px 0 0 var(--green);
+}
+
+.sections li.is-hot .n {
+  color: var(--green);
+}
+
+.sections__foot {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 14px;
+  max-width: 44ch;
+}
+
+/* ---------- chips ---------- */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.chip {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  padding: 6px 11px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+}
+
+.chip.is-on {
+  color: var(--green);
+  border-color: var(--green);
+}
+
+/* ---------- stats (CountUp) ---------- */
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(18px, 3vw, 44px);
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.stats__value {
+  font-family: var(--serif);
+  font-size: clamp(30px, 3.4vw, 46px);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--green);
+  display: flex;
+  align-items: baseline;
+}
+
+.stats__suffix {
+  font-size: 0.5em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.stats__label {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px;
+  max-width: 16ch;
+}
+
+/* ---------- closing slide ---------- */
+
+.install {
+  font-family: var(--mono);
+  font-size: clamp(14px, 1.45vw, 20px);
+  line-height: 2;
+  color: var(--ink);
+  text-align: left;
+}
+
+.install__prompt {
+  color: var(--green);
+}
+
+.footlink {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.footlink:hover {
+  color: var(--green);
+}
+
+.install-wrap {
+  max-width: 640px;
+  margin: 16px 0 0;
+}

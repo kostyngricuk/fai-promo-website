@@ -1,0 +1,82 @@
+/**
+ * Theme overrides for the vendored React Bits components.
+ *
+ * React Bits ships dark-mode defaults baked into each component's own stylesheet.
+ * Rather than editing the vendored files (which would be lost on the next re-sync),
+ * every adjustment lives here, scoped under `.deck` so it always wins on specificity.
+ */
+
+/* ---------- SpotlightCard → the light "note" card ---------- */
+
+.deck .card-spotlight {
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--green);
+  background-color: var(--card);
+  padding: 13px 16px;
+}
+
+.deck .card-spotlight.note--warn {
+  border-left-color: var(--amber);
+}
+
+.deck .card-spotlight:hover::before,
+.deck .card-spotlight:focus-within::before {
+  opacity: 1;
+}
+
+/* ---------- GlareHover → the file card ---------- */
+
+.deck .glare-hover {
+  display: block;
+  place-items: stretch;
+  text-align: left;
+}
+
+/* ---------- StarBorder → the install block ---------- */
+
+.deck .star-border-container {
+  display: block;
+  border-radius: var(--radius-lg);
+}
+
+.deck .inner-content {
+  border-radius: var(--radius-lg);
+  text-align: left;
+  padding: clamp(18px, 2.2vw, 26px) clamp(20px, 2.6vw, 32px);
+  font-size: inherit;
+}
+
+/* ---------- GradientText → an inline headline accent ---------- */
+
+.deck .animated-gradient-text {
+  display: inline-flex;
+  border-radius: 0;
+  backdrop-filter: none;
+  cursor: default;
+  font-weight: inherit;
+  margin: 0;
+}
+
+.deck .gradient-overlay::before {
+  background-color: var(--card);
+}
+
+/* ---------- ShinyText ---------- */
+
+/*
+ * The shipped stylesheet still animates `background-position` with a keyframe, which
+ * outranks the inline value the component's motion value writes. Hand control back
+ * to the component.
+ */
+.deck .shiny-text {
+  animation: none;
+  background: none;
+}
+
+/* ---------- AnimatedContent / FadeContent ---------- */
+
+/* Both start `visibility: hidden` and reveal themselves; make sure they can still grow. */
+.deck .reveal {
+  min-width: 0;
+}

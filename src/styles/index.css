@@ -1,0 +1,12 @@
+/*
+ * Single entry point for the page's styles, imported once by src/pages/index.astro.
+ * Order matters: tokens first, vendor overrides last.
+ */
+@import './tokens.css';
+@import './base.css';
+@import './deck.css';
+@import './terminal.css';
+@import './content.css';
+@import './rail.css';
+@import './github-link.css';
+@import './reactbits.css';

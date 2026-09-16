@@ -1,0 +1,47 @@
+---
+import Backdrop from '../components/Backdrop';
+import Deck from '../components/Deck';
+import GitHubLink from '../components/GitHubLink.astro';
+import '../styles/index.css';
+
+const title = 'FAI — Feature Agents Infrastructure';
+const description =
+  'One agent per feature. FAI builds a small expert for each part of your app, so Claude Code ' +
+  'plans, reviews and ships changes with the rules your code does not say out loud.';
+const url = 'https://github.com/kostyngricuk/fai';
+const repo = 'https://github.com/kostyngricuk/fai';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · demo</title>
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="light" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Decorative, so it can wait until the browser is idle. -->
+    <Backdrop client:idle />
+
+    <!-- The deck owns navigation, auto-play and the language switch. -->
+    <Deck client:load />
+
+    <GitHubLink href={repo} label="This site on GitHub" />
+  </body>
+</html>

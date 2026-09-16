@@ -1,0 +1,38 @@
+/**
+ * Design tokens.
+ *
+ * The palette comes from fai-banner.svg so the deck and the banner read as one
+ * piece of art direction. The two background greens are lightened from the
+ * banner's own values: at the banner's weight, --green text sat at 4.5:1 against
+ * them, which is borderline for body copy. --muted is nudged darker for the
+ * same reason. Everything else is untouched.
+ */
+:root {
+  --bg-1: #fafdf7;
+  --bg-2: #f2f7ed;
+  /* Same as --bg-2 at zero alpha, for the rail's fade-out. */
+  --bg-2-fade: rgba(242, 247, 237, 0);
+  --card: #ffffff;
+  --ink: #14331f;
+  --body: #243f2d;
+  --muted: #587a61;
+  --green: #2f7d4f;
+  --green-soft: #4d9a6b;
+  --line: #c2d6be;
+  --line-2: #c8d9c2;
+  --dash: #8fae93;
+  --amber: #a9761b;
+  --red: #ae3f2c;
+
+  /* Same green, expressed for the WebGL background and for rgba() mixes. */
+  --green-rgb: 47, 125, 79;
+
+  --sans: Inter, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --serif: 'Source Serif 4', 'Iowan Old Style', Palatino, Georgia, serif;
+  --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --radius: 6px;
+  --radius-lg: 10px;
+  --rail-h: clamp(78px, 8vh, 104px);
+  --pad: clamp(26px, 4vw, 64px);
+}

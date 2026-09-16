@@ -1,0 +1,110 @@
+.rail {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px clamp(16px, 3vw, 32px);
+  background: linear-gradient(to top, var(--bg-2) 55%, var(--bg-2-fade));
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.rail__marks {
+  display: flex;
+  gap: 6px;
+  flex: 1;
+  min-width: 60px;
+}
+
+.rail__mark {
+  height: 3px;
+  flex: 1;
+  background: var(--line);
+  border: 0;
+  padding: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.rail__mark:hover {
+  background: var(--dash);
+}
+
+.rail__mark.is-done {
+  background: var(--dash);
+}
+
+.rail__mark.is-now {
+  background: var(--green);
+}
+
+.rail__btn {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 5px 11px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.rail__btn:hover {
+  color: var(--ink);
+  border-color: var(--dash);
+}
+
+.rail__btn[aria-pressed='true'] {
+  color: var(--green);
+  border-color: var(--green);
+}
+
+.rail__count {
+  white-space: nowrap;
+}
+
+.langs {
+  display: flex;
+}
+
+.langs button {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.langs button:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.langs button:last-child {
+  border-radius: 0 5px 5px 0;
+  border-left: 0;
+}
+
+.langs button:hover {
+  color: var(--ink);
+}
+
+.langs button[aria-pressed='true'] {
+  color: var(--card);
+  background: var(--green);
+  border-color: var(--green);
+}
+
+@media (max-width: 860px) {
+  .rail__count {
+    display: none;
+  }
+}
